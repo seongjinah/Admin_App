@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@android:color/white"
+            android:backgroundTint="@android:color/white"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_title"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:maxLines="1"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_card_house"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:backgroundTint="@color/cardview_gray"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:src="@drawable/house"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/main_text_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/main_house"
+            android:textSize="18sp"
+            android:textColor="@color/option_text_gray"
+            android:fontFamily="@font/hangeulnurib"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_card_broker"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="55dp"
+            android:backgroundTint="@color/cardview_gray"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="23dp"
+                android:src="@drawable/broker"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/main_text_broker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/main_broker"
+            android:textSize="18sp"
+            android:textColor="@color/option_text_gray"
+            android:fontFamily="@font/hangeulnurib"/>
+
+    </LinearLayout>
+</RelativeLayout>

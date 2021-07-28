@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Admin App</string>
+
+    //main
+    <string name="main_title">HouseMart-관리자</string>
+    <string name="main_house">매물 승인</string>
+    <string name="main_broker">공인중개사 승인</string>
+
+    //house_list
+    <string name="house_list_title">승인대기 매물</string>
+
+    //broker_list
+    <string name="broker_list_title">승인대기 공인중개사</string>
+</resources>
