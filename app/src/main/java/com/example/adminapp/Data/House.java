@@ -4,20 +4,28 @@ import java.io.Serializable;
 
 public class House implements Serializable {
 
-    private int idx;
+    private Long idx;
     private String residence_type;
     private String code;
     private String residence_name;
-    private String dong;
-    private String ho;
+    private int dong;
+    private int ho;
     private String address;
     private double net_leaseable_area;
     private double leaseable_area;
     private String titleImg;
     private String sellerName;
-    private String sellerNum;
+    private String sellerIdNum;
 
-    public House(int idx, String residence_type, String code, String dong, String ho, double net_leaseable_area, double leaseable_area, String titleImg, String sellerName, String sellerNum) {
+    public House(Long idx, String residence_type, String code, int dong, int ho) {
+        this.idx = idx;
+        this.residence_type = residence_type;
+        this.code = code;
+        this.dong = dong;
+        this.ho = ho;
+    }
+
+    public House(Long idx, String residence_type, String code, int dong, int ho, double net_leaseable_area, double leaseable_area, String titleImg, String sellerName, String sellerIdNum) {
         this.idx = idx;
         this.residence_type = residence_type;
         this.code = code;
@@ -27,7 +35,7 @@ public class House implements Serializable {
         this.leaseable_area = leaseable_area;
         this.titleImg = titleImg;
         this.sellerName = sellerName;
-        this.sellerNum = sellerNum;
+        this.sellerIdNum = sellerIdNum;
 
         this.residence_name = "default";
         this.address = "default";
@@ -36,11 +44,29 @@ public class House implements Serializable {
     public House() {
     }
 
-    public int getIdx() {
+    @Override
+    public String toString() {
+        return "House{" +
+                "idx=" + idx +
+                ", residence_type='" + residence_type + '\'' +
+                ", code='" + code + '\'' +
+                ", residence_name='" + residence_name + '\'' +
+                ", dong=" + dong +
+                ", ho=" + ho +
+                ", address='" + address + '\'' +
+                ", net_leaseable_area=" + net_leaseable_area +
+                ", leaseable_area=" + leaseable_area +
+                ", titleImg='" + titleImg + '\'' +
+                ", sellerName='" + sellerName + '\'' +
+                ", sellerIdNum='" + sellerIdNum + '\'' +
+                '}';
+    }
+
+    public Long getIdx() {
         return idx;
     }
 
-    public void setIdx(int idx) {
+    public void setIdx(Long idx) {
         this.idx = idx;
     }
 
@@ -68,19 +94,19 @@ public class House implements Serializable {
         this.residence_name = residence_name;
     }
 
-    public String getDong() {
+    public int getDong() {
         return dong;
     }
 
-    public void setDong(String dong) {
+    public void setDong(int dong) {
         this.dong = dong;
     }
 
-    public String getHo() {
+    public int getHo() {
         return ho;
     }
 
-    public void setHo(String ho) {
+    public void setHo(int ho) {
         this.ho = ho;
     }
 
@@ -124,11 +150,11 @@ public class House implements Serializable {
         this.sellerName = sellerName;
     }
 
-    public String getSellerNum() {
-        return sellerNum;
+    public String getSellerIdNum() {
+        return sellerIdNum;
     }
 
-    public void setSellerNum(String sellerNum) {
-        this.sellerNum = sellerNum;
+    public void setSellerIdNum(String sellerIdNum) {
+        this.sellerIdNum = sellerIdNum;
     }
 }

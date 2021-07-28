@@ -1,6 +1,8 @@
 package com.example.adminapp;
 
 import com.example.adminapp.Data.House;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.List;
 
@@ -17,19 +19,23 @@ import retrofit2.http.Query;
 
 public interface RESTApi {
 
+    final String BASE_URL = "http://122.37.239.49:9000/";
+
     @Headers(value = "Content-Type: application/json")
 
     @POST("/board/get/uncheckedList")
     Call<List<House>> getList();
 
     @POST("/auth/reliable")
-    Call<Boolean> changeReliable();
+    Call<Boolean> changeReliable(
+            @Query("idx") Long idx);
 
     @POST("/auth/rejection")
-    Call<Boolean> changeRejection();
+    Call<Boolean> changeRejection(
+            @Query("idx") Long idx);
 
     public static final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://122.37.239.49:9000/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create()))
             .build();
 }

@@ -9,6 +9,21 @@
     //house_list
     <string name="house_list_title">승인대기 매물</string>
 
+    //house_detail
+    <string name="house_detail_explanation">등기부등본과 아래 매물 정보가 일치하는지 확인 후,허가 또는 반려를 선택하세요</string>
+    <string name="house_detail_address">건물명칭 및 번호</string>
+    <string name="house_detail_area">전용면적</string>
+    <string name="house_detail_proprietary">소유자</string>
+    <string name="house_detail_table_title">승인대기 매물정보</string>
+    <string name="house_detail_allow">허가</string>
+    <string name="house_detail_disallow">반려</string>
+
+    //dialog_house_detail
+    <string name="dialog_check_allow">등기부등본과 매물정보가 일치하나요?</string>
+    <string name="dialog_check_disallow">등기부등본과 매물정보가 일치하지 않나요?</string>
+    <string name="dialog_check_send_btn">예</string>
+    <string name="dialog_check_cancle_btn">취소</string>
+
     //broker_list
     <string name="broker_list_title">승인대기 공인중개사</string>
 </resources>

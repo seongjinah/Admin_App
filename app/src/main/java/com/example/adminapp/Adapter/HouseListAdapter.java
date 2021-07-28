@@ -48,10 +48,7 @@ public class HouseListAdapter extends RecyclerView.Adapter<HouseListAdapter.View
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, HouseDetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("house", house);
-                intent.putExtras(bundle);
+                intent.putExtra("house", house);
 
                 mContext.startActivity(intent);
             }

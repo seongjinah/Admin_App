@@ -79,7 +79,6 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_gravity="right"
-            android:text="15개의 매물이 승인 대기 중 입니다."
             android:textSize="14sp"
             android:fontFamily="@font/hangeulnurir"/>
 

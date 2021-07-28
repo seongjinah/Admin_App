@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adminapp.Adapter.HouseListAdapter;
@@ -16,6 +17,7 @@ import com.opencsv.CSVReader;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +31,7 @@ public class HouseListActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private ImageView mHouseListBack;
-
-    private HouseListAdapter mAdapter;
+    private TextView mHouseCount;
 
     private List<House> mHouseList;
 
@@ -40,12 +41,7 @@ public class HouseListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_house_list);
 
         init();
-        getDataFromServer();
-        //getDataFromCSV();
-
-        //mListAdapter 만들기
-        //mRecyclerView에 Adapter 달기기
-
+        getData();
     }
 
     private void init() {
@@ -57,18 +53,27 @@ public class HouseListActivity extends AppCompatActivity {
             }
         });
 
+        mHouseCount = findViewById(R.id.house_list_count);
+
         mRecyclerView = findViewById(R.id.house_list_recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(HouseListActivity.this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(manager);
     }
 
-    private void getDataFromServer() {
+    private void getData() {
+
+        mHouseList = new ArrayList<>();
+
         RESTApi mRESTApi = RESTApi.retrofit.create(RESTApi.class);
         mRESTApi.getList().enqueue(new Callback<List<House>>() {
             @Override
             public void onResponse(Call<List<House>> call, Response<List<House>> response) {
                 List<House> Response = (List<House>) response.body();
                 mHouseList = (ArrayList) Response;
+
+                mHouseCount.setText(mHouseList.size() + "개의 매물 승인대기중");
+
+                getDataFromCSV();
             }
 
             @Override
@@ -83,25 +88,34 @@ public class HouseListActivity extends AppCompatActivity {
 
         InputStreamReader is = new InputStreamReader(getResources().openRawResource(R.raw.apartmentinfo));
         CSVReader reader = new CSVReader(is);
-        List<String[]> list = null;
+        List<String[]> list = new ArrayList<>();
+        List<String> codes = new ArrayList<>();
+        String[] strings = {"", };
         try {
-            list = reader.readAll();
+            while ((strings = reader.readNext()) != null) {
+                list.add(strings);
+                codes.add(strings[0]);
+            }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
 
         for(House house : mHouseList) {
-            String code = house.getCode();
+            String houseCode = house.getCode();
 
-            int idx = list.indexOf(new String[]{code, });
+            int idx = codes.indexOf(houseCode);
 
-            Log.d(TAG, "idx: " + idx);
+            house.setAddress(list.get(idx)[2]);
+            house.setResidence_name(list.get(idx)[1]);
         }
+
+        HouseListAdapter houseListAdapter = new HouseListAdapter(mHouseList, HouseListActivity.this);
+        mRecyclerView.setAdapter(houseListAdapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getData();
     }
 }
