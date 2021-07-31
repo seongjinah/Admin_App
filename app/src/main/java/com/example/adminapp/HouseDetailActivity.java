@@ -48,7 +48,8 @@ public class HouseDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         mHouse = (House) intent.getSerializableExtra("house");
 
-        mHouseAddress.setText(mHouse.getAddress());
+        mHouseAddress.setText(mHouse.getAddress() + " " + mHouse.getResidence_name() + " " +
+                mHouse.getDong() + "동 " + mHouse.getHo() + "호");
         mHouseArea.setText(mHouse.getNet_leaseable_area() + "m²");
 
         String seller = mHouse.getSellerName() + " (" + mHouse.getSellerIdNum() + "-******)";
