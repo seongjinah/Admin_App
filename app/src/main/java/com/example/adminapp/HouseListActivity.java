@@ -72,8 +72,9 @@ public class HouseListActivity extends AppCompatActivity {
                 mHouseList = (ArrayList) Response;
 
                 mHouseCount.setText(mHouseList.size() + "개의 매물 승인대기중");
-
-                getDataFromCSV();
+                HouseListAdapter houseListAdapter = new HouseListAdapter(mHouseList, HouseListActivity.this);
+                mRecyclerView.setAdapter(houseListAdapter);
+//                getDataFromCSV();
             }
 
             @Override
@@ -105,8 +106,10 @@ public class HouseListActivity extends AppCompatActivity {
 
             int idx = codes.indexOf(houseCode);
 
-            house.setAddress(list.get(idx)[2]);
-            house.setResidence_name(list.get(idx)[1]);
+            if (idx >= 0 && idx <= 2) {
+                house.setAddress(list.get(idx)[2]);
+                house.setResidence_name(list.get(idx)[1]);
+            }
         }
 
         HouseListAdapter houseListAdapter = new HouseListAdapter(mHouseList, HouseListActivity.this);

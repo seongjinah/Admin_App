@@ -39,7 +39,7 @@ public class HouseListAdapter extends RecyclerView.Adapter<HouseListAdapter.View
     public void onBindViewHolder(@NonNull HouseListAdapter.ViewHolder holder, int position) {
         House house = mHouseList.get(position);
 
-        String house_name = house.getResidence_name() + " " + house.getHo() + "호 " + house.getDong() + "동";
+        String house_name = house.getResidence_name() + " " + house.getDong() + "동" + house.getHo() + "호 " ;
         holder.mTextHouse.setText(house_name);
         holder.mTextBargainer.setText(house.getSellerName());
 

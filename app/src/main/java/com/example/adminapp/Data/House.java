@@ -25,20 +25,19 @@ public class House implements Serializable {
         this.ho = ho;
     }
 
-    public House(Long idx, String residence_type, String code, int dong, int ho, double net_leaseable_area, double leaseable_area, String titleImg, String sellerName, String sellerIdNum) {
+    public House(Long idx, String residence_type, String code, String residence_name, int dong, int ho, String address, double net_leaseable_area, double leaseable_area, String titleImg, String sellerName, String sellerIdNum) {
         this.idx = idx;
         this.residence_type = residence_type;
         this.code = code;
+        this.residence_name = residence_name;
         this.dong = dong;
         this.ho = ho;
+        this.address = address;
         this.net_leaseable_area = net_leaseable_area;
         this.leaseable_area = leaseable_area;
         this.titleImg = titleImg;
         this.sellerName = sellerName;
         this.sellerIdNum = sellerIdNum;
-
-        this.residence_name = "default";
-        this.address = "default";
     }
 
     public House() {
