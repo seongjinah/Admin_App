@@ -79,8 +79,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_gravity="right"
-            android:textSize="14sp"
-            android:fontFamily="@font/hangeulnurir"/>
+            android:textSize="14sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/house_list_recycler_view"

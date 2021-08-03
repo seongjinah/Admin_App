@@ -64,10 +64,28 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/broker_list_recycler_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/broker_list_appbar"/>
+        android:layout_below="@id/broker_list_appbar"
+        android:background="@color/cardview_gray"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/broker_list_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:textSize="14sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/broker_list_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

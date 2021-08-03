@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BrokerDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/broker_detail_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/broker_detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@android:color/white"
+            android:backgroundTint="@android:color/white"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:id="@+id/broker_detail_btn_back"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/icon_back" />
+
+                <TextView
+                    android:id="@+id/broker_detail_con_titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/broker_list_title"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:ellipsize="end"
+                    android:maxLines="1"/>
+
+                <ImageView
+                    android:id="@+id/house_detail_search"
+                    android:layout_gravity="center|right"
+                    android:visibility="invisible"
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="20.0dip"
+                    app:srcCompat="@drawable/icon_search" />
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/broker_detail_appbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/broker_detail_explanation"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="@string/broker_detail_explanation"
+                android:textSize="20sp"
+                android:textColor="@color/text_black"
+                android:textAlignment="center"
+                android:fontFamily="@font/applesdgothicneol"
+                android:gravity="center_horizontal"/>
+
+            <ImageView
+                android:id="@+id/broker_detail_confirmation"
+                android:layout_width="250dp"
+                android:layout_height="350dp"
+                android:layout_below="@id/broker_detail_explanation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
+
+            <LinearLayout
+                android:id="@+id/broker_detail_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/broker_detail_confirmation"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="65dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/broker_detail_btn_allow"
+                    android:layout_width="125dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="@string/broker_detail_allow"
+                    android:textColor="@color/text_white"
+                    android:textSize="18sp"
+                    android:background="@drawable/blue_round_rectangular" />
+
+                <TextView
+                    android:id="@+id/broker_detail_btn_disallow"
+                    android:layout_width="125dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="@string/broker_detail_disallow"
+                    android:textColor="@color/text_black"
+                    android:textSize="18sp"
+                    android:background="@drawable/gray_round_rectangular"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

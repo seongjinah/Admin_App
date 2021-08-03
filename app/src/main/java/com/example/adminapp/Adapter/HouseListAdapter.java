@@ -41,7 +41,9 @@ public class HouseListAdapter extends RecyclerView.Adapter<HouseListAdapter.View
 
         String house_name = house.getResidence_name() + " " + house.getDong() + "동" + house.getHo() + "호 " ;
         holder.mTextHouse.setText(house_name);
-        holder.mTextBargainer.setText(house.getSellerName());
+
+        String bargainer = house.getSellerName() + " (" + house.getSellerIdNum() + "-******)";
+        holder.mTextBargainer.setText(bargainer);
 
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override

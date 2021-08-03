@@ -65,7 +65,7 @@ public class HouseListActivity extends AppCompatActivity {
         mHouseList = new ArrayList<>();
 
         RESTApi mRESTApi = RESTApi.retrofit.create(RESTApi.class);
-        mRESTApi.getList().enqueue(new Callback<List<House>>() {
+        mRESTApi.getHouseList().enqueue(new Callback<List<House>>() {
             @Override
             public void onResponse(Call<List<House>> call, Response<List<House>> response) {
                 List<House> Response = (List<House>) response.body();
@@ -83,37 +83,6 @@ public class HouseListActivity extends AppCompatActivity {
                 Log.d(TAG, throwable.getMessage());
             }
         });
-    }
-
-    private void getDataFromCSV() {
-
-        InputStreamReader is = new InputStreamReader(getResources().openRawResource(R.raw.apartmentinfo));
-        CSVReader reader = new CSVReader(is);
-        List<String[]> list = new ArrayList<>();
-        List<String> codes = new ArrayList<>();
-        String[] strings = {"", };
-        try {
-            while ((strings = reader.readNext()) != null) {
-                list.add(strings);
-                codes.add(strings[0]);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for(House house : mHouseList) {
-            String houseCode = house.getCode();
-
-            int idx = codes.indexOf(houseCode);
-
-            if (idx >= 0 && idx <= 2) {
-                house.setAddress(list.get(idx)[2]);
-                house.setResidence_name(list.get(idx)[1]);
-            }
-        }
-
-        HouseListAdapter houseListAdapter = new HouseListAdapter(mHouseList, HouseListActivity.this);
-        mRecyclerView.setAdapter(houseListAdapter);
     }
 
     @Override

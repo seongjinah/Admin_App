@@ -41,7 +41,7 @@
                 android:text="house name"
                 android:textSize="15sp"
                 android:textColor="@color/card_text_gray"
-                android:fontFamily="@font/hangeulnurir"/>
+                android:maxLines="1"/>
 
             <ImageView
                 android:id="@+id/item_house_list_image_bargainer"
@@ -63,7 +63,7 @@
                 android:text="bargainer name"
                 android:textSize="15sp"
                 android:textColor="@color/card_text_gray"
-                android:fontFamily="@font/hangeulnurir"/>
+                android:maxLines="1"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

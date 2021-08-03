@@ -87,7 +87,8 @@
         android:layout_marginTop="100dp"
         android:text="@string/house_detail_table_title"
         android:textColor="@color/text_dark_gray"
-        android:textSize="19dp"/>
+        android:textSize="19dp"
+        android:fontFamily="@font/applesdgothicneol"/>
 
     <TableLayout
         android:id="@+id/house_detail_table"
@@ -105,27 +106,29 @@
             android:layout_marginTop="0.5dp">
 
             <TextView
-                android:layout_width="77dp"
-                android:layout_height="wrap_content"
-                android:text="@string/house_detail_address"
-                android:textColor="@color/text_dark_gray"
-                android:textSize="17sp"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:background="@color/white"
+                android:layout_width="80dp"
+                android:layout_height="53dp"
                 android:layout_margin="0.5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/applesdgothicneol"
+                android:gravity="center_horizontal"
                 android:paddingLeft="7dp"
-                android:paddingRight="7dp"
                 android:paddingTop="2dp"
-                android:paddingBottom="2dp"/>
+                android:paddingRight="7dp"
+                android:paddingBottom="2dp"
+                android:text="@string/house_detail_address"
+                android:textAlignment="center"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/house_detail_address"
-                android:layout_width="273dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:text="서울특별시 서대문구 모래내로 430"
                 android:textColor="@color/text_dark_gray"
-                android:textSize="17sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/applesdgothicneol"
                 android:background="@color/white"
                 android:layout_margin="0.5dp"
                 android:paddingLeft="7dp"
@@ -139,11 +142,12 @@
             android:layout_marginRight="0.5dp">
 
             <TextView
-                android:layout_width="77dp"
+                android:layout_width="80dp"
                 android:text="@string/house_detail_area"
                 android:textColor="@color/text_dark_gray"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textAlignment="center"
+                android:fontFamily="@font/applesdgothicneol"
                 android:gravity="center_horizontal"
                 android:background="@color/white"
                 android:layout_margin="0.5dp"
@@ -154,9 +158,11 @@
 
             <TextView
                 android:id="@+id/house_detail_area"
+                android:layout_height="match_parent"
                 android:text="430m2"
                 android:textColor="@color/text_dark_gray"
-                android:textSize="17sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/applesdgothicneol"
                 android:background="@color/white"
                 android:layout_margin="0.5dp"
                 android:paddingLeft="7dp"
@@ -171,11 +177,12 @@
             android:layout_marginBottom="0.5dp">
 
             <TextView
-                android:layout_width="77dp"
+                android:layout_width="80dp"
                 android:text="@string/house_detail_proprietary"
                 android:textColor="@color/text_dark_gray"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textAlignment="center"
+                android:fontFamily="@font/applesdgothicneol"
                 android:gravity="center_horizontal"
                 android:background="@color/white"
                 android:layout_margin="0.5dp"
@@ -188,7 +195,8 @@
                 android:id="@+id/house_detail_proprietary"
                 android:text="성진아 (980324-******)"
                 android:textColor="@color/text_dark_gray"
-                android:textSize="17sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/applesdgothicneol"
                 android:background="@color/white"
                 android:layout_margin="0.5dp"
                 android:paddingLeft="7dp"
